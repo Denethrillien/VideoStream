@@ -115,5 +115,19 @@ nav
 
 .Fieldset 
 {
-    width: 200px;
+    color: red;
+    width: 220px;
+}
+
+.ShadowBox
+{
+    width:460px; 
+    height: 281px; 
+	-moz-box-shadow: 4px 4px 4px #afafaf;
+	-webkit-box-shadow: 4px 4px 4px #afafaf;
+	box-shadow: 4px 4px 4px #afafaf;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#afafaf')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#afafaf');
 }

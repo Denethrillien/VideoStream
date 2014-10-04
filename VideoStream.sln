@@ -5,6 +5,11 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoStream.Web", "VideoStream\VideoStream.Web.csproj", "{81FAF590-1629-4F8E-95D9-9DBA162249B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPlayer", "MediaPlayer\MediaPlayer.csproj", "{3E05FA01-416D-4888-B4A4-125CD93605E9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{81FAF590-1629-4F8E-95D9-9DBA162249B0} = {81FAF590-1629-4F8E-95D9-9DBA162249B0}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{81FAF590-1629-4F8E-95D9-9DBA162249B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81FAF590-1629-4F8E-95D9-9DBA162249B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81FAF590-1629-4F8E-95D9-9DBA162249B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E05FA01-416D-4888-B4A4-125CD93605E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E05FA01-416D-4888-B4A4-125CD93605E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E05FA01-416D-4888-B4A4-125CD93605E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E05FA01-416D-4888-B4A4-125CD93605E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

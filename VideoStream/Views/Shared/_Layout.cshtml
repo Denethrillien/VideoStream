@@ -29,7 +29,10 @@
         <ul>
             <li>@Html.ActionLink("Newest", "Index", "Home")</li>
             <li>@Html.ActionLink("Music", "Index", "Home")</li>
-            <li>@Html.ActionLink("MyPEA", "Index", "Home")</li>
+            @if (Request.IsAuthenticated)
+            {
+                <li>@Html.ActionLink("MyPEA", "Index", "Home")</li>
+            }
             <li>@Html.ActionLink("Link", "Index", "Home")</li>
         </ul>
     </nav>
@@ -37,7 +40,10 @@
         @RenderBody()
     </div>
     <div id="footer">
-        Copyrights, etc
+        OnTheGoVids Version 0.0.2 All images are the property of their respective owners.
+        <div>
+            <a href="About.aspx">About</a> | <a href="FAQ.aspx">FAQ</a>
+        </div>
     </div>
 </body>
 </html>
