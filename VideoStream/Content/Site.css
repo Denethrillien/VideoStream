@@ -92,4 +92,16 @@ nav
 .TextBox 
 {
     width: 80px;
+    vertical-align: middle;
+}
+
+.RegBox 
+{
+    width: 160px;
+    vertical-align: middle;
+}
+
+.RegForm 
+{
+    padding: 2px 0px 2px 0px;
 }
