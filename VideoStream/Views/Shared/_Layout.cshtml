@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" type="image/x-icon" href=@Url.Content("~/Images/Page/favicon.png") />
+    <link rel="stylesheet" href="@Url.Content("~/Content/Site.css")" />
+</head>
+<body>
+    <header id="header">
+        <fieldset id="loginDisplay">
+            @Html.Label("Login")
+            @Html.TextBox("txtUser", "", new { placeholder = "Username", @class = "TextBox" })
+            @Html.Password("passUser", "", new { placeholder = "Password", @class = "TextBox" })
+        </fieldset>
+    </header>
+    <nav>
+        <ul>
+            <li>@Html.ActionLink("Newest", "Index", "Home")</li>
+            <li>@Html.ActionLink("Music", "Index", "Home")</li>
+            <li>@Html.ActionLink("MyPEA", "Index", "Home")</li>
+            <li>@Html.ActionLink("Link", "Index", "Home")</li>
+        </ul>
+    </nav>
+    <div id="content">
+        @RenderBody()
+    </div>
+    <div id="footer">
+        Copyrights, etc
+    </div>
+</body>
+</html>
