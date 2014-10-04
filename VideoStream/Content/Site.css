@@ -23,6 +23,13 @@ body
 }
 
 /* Content */
+#content 
+{
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    margin-left: 34px;
+}
 
 /* Footer */
 #footer 
@@ -104,4 +111,9 @@ nav
 .RegForm 
 {
     padding: 2px 0px 2px 0px;
+}
+
+.Fieldset 
+{
+    width: 200px;
 }
