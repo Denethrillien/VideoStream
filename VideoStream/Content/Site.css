@@ -1,19 +1,22 @@
 ﻿/* Common */
-body {
+body 
+{
     background-color: #ffffff;
     float: left;
     width: 100%;
 }
 
 /* Header */
-#header {
+#header 
+{
     background: url("Images/Page/PMlogo.png") no-repeat;
     padding: 5px 0px 5px 0px;
     height: 38px;
 }
 
 /*Login display*/
-#loginDisplay {
+#loginDisplay 
+{
     float: right;
     padding: 0px 20px 0px 0px;
     border: none;
@@ -22,7 +25,8 @@ body {
 /* Content */
 
 /* Footer */
-#footer {
+#footer 
+{
     color: #4e5766;
     padding: 8px 0px 0px 0px;
     margin: 0px auto;
@@ -30,30 +34,35 @@ body {
     line-height: normal;
 }
 
-    #footer a:link, a:visited, a:active {
+    #footer a:link, a:visited, a:active 
+    {
         color: #465c71;
         text-decoration: none;
     }
 
-    #footer a:hover {
+    #footer a:hover 
+    {
         color: #26a0da;
         text-decoration: none;
     }
 
 /* Main navigation */
-nav {
+nav 
+{
     padding: 4px 0px 4px 8px;
     margin-left: 20px;
 }
 
-    nav ul {
+    nav ul
+    {
         list-style: none;
         margin: 0px;
         padding: 0px;
         width: auto;
     }
 
-        nav ul li a, nav ul li a:visited {
+        nav ul li a, nav ul li a:visited 
+        {
             background-color: #FFFFFF;
             float: left;
             border: 1px #FFFFFF solid;
@@ -65,19 +74,22 @@ nav {
             white-space: nowrap;
         }
 
-            nav ul li a:hover {
+            nav ul li a:hover 
+            {
                 background-color: #FFFFFF;
                 color: #26a0da;
                 text-decoration: none;
             }
 
-            nav ul li a:active {
+            nav ul li a:active 
+            {
                 background-color: #FFFFFF;
                 color: #cfdbe6;
                 text-decoration: none;
             }
 
 /*Universal Html.TextBox parameters*/
-.TextBox {
+.TextBox 
+{
     width: 80px;
 }

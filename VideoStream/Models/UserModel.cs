@@ -11,15 +11,17 @@ namespace VideoStream.Models
         [Required]
         [EmailAddress]
         [StringLength(200)]
-        public string Email { get; set; }
+        [Display(Name = "")]
+        public string email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
         [StringLength(20, MinimumLength=8)]
-        public string Password { get; set; }
+        [Display(Name = "")]
+        public string password { get; set; }
 
         [DataType(DataType.Text)]
         [StringLength(20, MinimumLength=3)]
-        public string UserName { get; set; }
+        public string userName { get; set; }
     }
 }

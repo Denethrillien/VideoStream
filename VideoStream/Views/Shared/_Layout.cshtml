@@ -9,11 +9,17 @@
 </head>
 <body>
     <header id="header">
-        <fieldset id="loginDisplay">
-            @Html.Label("Login")
-            @Html.TextBox("txtUser", "", new { placeholder = "Username", @class = "TextBox" })
-            @Html.Password("passUser", "", new { placeholder = "Password", @class = "TextBox" })
-        </fieldset>
+        <div id="loginDisplay">
+            @if (Request.IsAuthenticated) 
+            { 
+                @Html.Encode(User.Identity.Name)
+                @Html.ActionLink("Log Out", "Logout", "User")
+            }
+            else
+            {
+                @Html.Partial("../User/_Login")
+            }
+        </div>
     </header>
     <nav>
         <ul>
