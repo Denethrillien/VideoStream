@@ -1,0 +1,17 @@
+﻿@model VideoStream.Models.UserModel
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Invalid username or password");
+    <div>
+        <fieldset>
+            <legend>
+                Login |
+                @Html.ActionLink("Register", "Register", "User")
+            </legend>
+                @Html.TextBoxFor(u => u.email, new { placeholder = "Username", @class = "TextBox" })
+                @Html.PasswordFor(u => u.password, new { placeholder = "Password", @class = "TextBox" })
+                <input type="submit" name="Login" value="Go!" />
+        </fieldset>
+    </div>
+}
