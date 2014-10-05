@@ -10,9 +10,16 @@
 <body>
     <header id="header">
         <div id="loginDisplay">
-            @if (Request.IsAuthenticated) 
-            { 
+            @if (Request.IsAuthenticated)
+            {
                 @Html.Encode(User.Identity.Name)
+                <span>
+                    |
+                </span>
+                @Html.ActionLink("Messenger", "Index", "Home")
+                <span>
+                    |
+                </span>
                 @Html.ActionLink("Log Out", "Logout", "User")
             }
             else
@@ -40,7 +47,7 @@
         @RenderBody()
     </div>
     <div id="footer">
-        PEAmeia 0.0.2 All images are the property of their respective owners.
+        PEAmeia 0.0.2 &copy; 2014 Alex Hage. All third-party content belongs to the respective owners.
         <div>
             <a href="About.aspx">About</a> | <a href="FAQ.aspx">FAQ</a>
         </div>

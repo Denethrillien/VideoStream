@@ -10,7 +10,7 @@ body
 #header 
 {
     background: url("Images/Page/PMlogo.png") no-repeat;
-    padding: 5px 0px 5px 0px;
+    margin: 5px 0px 5px 0px;
     height: 38px;
 }
 
@@ -18,7 +18,7 @@ body
 #loginDisplay 
 {
     float: right;
-    padding: 0px 20px 0px 0px;
+    margin: 0px 20px 0px 0px;
     border: none;
 }
 
@@ -26,6 +26,7 @@ body
 #content 
 {
     width: 100%;
+    float: left;
     margin-top: 15px;
     margin-left: 34px;
 }
@@ -34,7 +35,7 @@ body
 #footer 
 {
     color: #4e5766;
-    padding: 20px 0px 0px 0px;
+    margin: 20px 0px 0px 0px;
     text-align: center;
     line-height: normal;
 }
@@ -100,6 +101,7 @@ nav
     vertical-align: middle;
 }
 
+/*View-specific Html.TextBox parameters*/
 .RegBox 
 {
     width: 160px;
@@ -117,6 +119,7 @@ nav
     width: 220px;
 }
 
+/*Shadow function class for containers*/
 .ShadowBox
 {
 	-moz-box-shadow: 4px 4px 4px #afafaf;
@@ -134,12 +137,6 @@ nav
     width: 100%;
     float: left;
 }
-#container 
-{
-    width:100%;
-    float:left;
-    margin-bottom: 20px;
-}
 
 .UserMedia 
 {
@@ -147,19 +144,21 @@ nav
 }
 .UserRelated 
 {
+    margin-bottom: 20px;
     float: left;
-    width: 460px;
-    margin-left: 20px;
+    width: 350px;
+    margin-right: 20px;
 }
 .UserInfo 
 {
+    margin-bottom: 20px;
     float: left;
-    margin-left: 20px;
+    margin-right: 20px;
     width: 200px;
 }
 .UserGuestBook 
 {
-    margin-top: 20px;
+    margin-bottom: 20px;
     width: 460px;
     height: 300px;
 }
@@ -167,6 +166,8 @@ nav
 /*Silverlight specific*/
 .SLContainer 
 {
+    margin-right: 20px;
+    margin-bottom: 20px;
     width:460px; 
-    height: 290px; 
+    height: 281px; 
 }

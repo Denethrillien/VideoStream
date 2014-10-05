@@ -2,9 +2,7 @@
     ViewBag.Title = "PEAmedia Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div>
-    @Helpers.SilverLightHostControl("/ClientBin/MediaPlayer.xap")
-</div>
-<div>
+    <div class="SLContainer">
+        @Helpers.SilverLightHostControl("/ClientBin/MediaPlayer.xap")
+    </div>
     @Html.ActionLink("Profile", "UserProfile", "Home")
-</div>
