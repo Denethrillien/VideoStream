@@ -127,3 +127,4 @@ C:\Users\Alex\Documents\VideoStream\MediaPlayer\Bin\Debug\uk\System.Windows.Cont
 C:\Users\Alex\Documents\VideoStream\MediaPlayer\Bin\Debug\vi\System.Windows.Controls.Data.Input.resources.dll
 C:\Users\Alex\Documents\VideoStream\MediaPlayer\Bin\Debug\zh-Hans\System.Windows.Controls.Data.Input.resources.dll
 C:\Users\Alex\Documents\VideoStream\MediaPlayer\Bin\Debug\zh-Hant\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\Alex\Documents\VideoStream\MediaPlayer\Bin\Debug\MediaPlayer.XML

@@ -11,30 +11,30 @@
         <Grid.Background>
             <ImageBrush ImageSource="/GraphicComponents/PlayerLogo.png"/>
         </Grid.Background>
-        <MediaElement  Stretch="Fill"  Source="" AutoPlay="False" MediaOpened="MediaElement_MediaOpened" />
+        <MediaElement Name="mediaPlayer"  Stretch="Fill"  Source="" AutoPlay="False" MediaOpened="mediaPlayer_MediaOpened" />
         <sdk:Label Name="currentMedia" HorizontalAlignment="Right" Height="28" VerticalAlignment="Top" Width="450" Padding="0 5 10 0" Content="Now Playing"/>
-        <ProgressBar Name="bottomBar" HorizontalAlignment="Left" Height="4" Margin="0,277,0,0" VerticalAlignment="Top" Width="460" Visibility="Collapsed" Value="{Binding Position.TotalMilliseconds, ElementName=mediaScreen, Mode=OneWay}"/>
+        <ProgressBar Name="bottomBar" HorizontalAlignment="Left" Height="4" VerticalAlignment="Bottom" Width="460" Visibility="Collapsed" Value="{Binding Position.TotalMilliseconds, ElementName=mediaScreen, Mode=OneWay}"/>
         <Rectangle Width="460" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Left" Fill="Transparent" MouseEnter="showControls" />
         <!--Canvas containing media controls-->
         <Canvas Height="40" HorizontalAlignment="Left" Name="controls" VerticalAlignment="Bottom" Width="460" Background ="White" Opacity="0.4" MouseLeave="hideControls" >
-            <ProgressBar Height="20" Name="ProgBar" Width="350" Canvas.Left="48" Canvas.Top="9" VerticalAlignment="Bottom" Value="{Binding Position.TotalMilliseconds, ElementName=mediaScreen, Mode=OneWay}" />
-            <Button Cursor="Hand" Canvas.Left="9" Canvas.Top="5" Content="&#x25b7;" Height="28" Name="PlayBtn" FontFamily="Arial" Width="34" VerticalAlignment="Bottom" Click="PlayBtn_Click">
+            <ProgressBar Height="20" Name="progBar" Width="350" Canvas.Left="48" Canvas.Top="9" VerticalAlignment="Bottom" Value="{Binding Position.TotalMilliseconds, ElementName=mediaScreen, Mode=OneWay}" />
+            <Button Cursor="Hand" Canvas.Left="9" Canvas.Top="5" Content="&#x25b7;" Height="28" Name="playBtn" FontFamily="Arial" Width="34" VerticalAlignment="Bottom" Click="playBtn_Click">
                 <ToolTipService.ToolTip>
                     <ToolTip Content="Play/Pause" />
                 </ToolTipService.ToolTip>
             </Button>
-            <Button Cursor="Hand" Canvas.Left="404" Canvas.Top="9" Height="20" Name="VolBtn" Width="20" VerticalAlignment="Bottom" Click="VolBtn_Click" MouseEnter="showVol" >
+            <Button Cursor="Hand" Canvas.Left="404" Canvas.Top="9" Height="20" Name="volBtn" Width="20" VerticalAlignment="Bottom" Click="volBtn_Click" MouseEnter="showVol" >
                 <ToolTipService.ToolTip>
                     <ToolTip Content="Mute" />
                 </ToolTipService.ToolTip>
             </Button>
-            <Button Cursor="Hand" Canvas.Left="430" Canvas.Top="9" Content="&#x2b1c;" Height="20" Name="ScreenBtn" Width="20" VerticalAlignment="Bottom" Click="ScreenBtn_Click" MouseEnter="hideVol" >
+            <Button Cursor="Hand" Canvas.Left="430" Canvas.Top="9" Content="&#x2b1c;" Height="20" Name="screenBtn" Width="20" VerticalAlignment="Bottom" Click="screenBtn_Click" MouseEnter="hideVol" >
                 <ToolTipService.ToolTip>
                     <ToolTip Content="Fullscreen" />
                 </ToolTipService.ToolTip>
             </Button>
             <Slider Canvas.Left="396" Orientation="Vertical" Canvas.Top="-94" Height="105" Name="volSlider" Width="35" Visibility="Collapsed" ValueChanged="volSlider_ValueChanged" MouseLeave="hideVol" />
-            <Slider Canvas.Left="48" Cursor="Hand" Height="20" Name="progSlider" Width="358" MouseEnter="hideVol" ValueChanged="progSlider_ValueChanged" Opacity="0" Canvas.Top="9" />
+            <Slider Canvas.Left="48" Cursor="Hand" Height="20" Name="progSlider" Width="351" MouseEnter="hideVol" ValueChanged="progSlider_ValueChanged" Opacity="0" Canvas.Top="9" />
         </Canvas>
     </Grid>
 </UserControl>
