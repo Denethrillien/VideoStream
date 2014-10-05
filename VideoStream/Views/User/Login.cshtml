@@ -15,12 +15,12 @@
                 @Html.ActionLink("Register", "Register", "User")
             </legend>
             <div class="RegForm">
-                @Html.TextBoxFor(u => u.email, new { placeholder = "Username", @class = "RegBox" })
                 @Html.ValidationMessageFor(u => u.email)
+                @Html.TextBoxFor(u => u.email, new { placeholder = "Username", @class = "RegBox" })
             </div>
             <div class="RegForm">
-                @Html.PasswordFor(u => u.password, new { placeholder = "Password", @class = "RegBox" })
                 @Html.ValidationMessageFor(u => u.password)
+                @Html.PasswordFor(u => u.password, new { placeholder = "Password", @class = "RegBox" })
             </div>
             <div class="RegForm">
                 <input type="submit" value="Login" />
