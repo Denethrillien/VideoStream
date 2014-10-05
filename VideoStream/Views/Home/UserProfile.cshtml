@@ -3,15 +3,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="UserInfo">
-    Primary user information. Position: left. Content: User avatar, username, optionals (Age, sex, location), profile comment
-</div>
-<div class="UserMedia">
+<div id="featured">
     <h2>
         Featured
     </h2>
-    @Helpers.SilverLightHostControl("/ClientBin/MediaPlayer.xap")
 </div>
-<div class="UserGuestBook">
-    Other users' comments.
+<div id="container">
+    <div class ="UserMedia">
+        <div id="slContainer">
+            @Helpers.SilverLightHostControl("/ClientBin/MediaPlayer.xap")
+        </div>
+        <div class="UserGuestBook ShadowBox">
+            Other users' comments.
+        </div>
+    </div>
+    <div class="UserRelated ShadowBox">
+        Related content goes here
+    </div>
+    <div class="UserInfo ShadowBox">
+        Primary user information. Position: left. Content: User avatar, username, optionals (Age, sex, location), profile comment
+    </div>
 </div>

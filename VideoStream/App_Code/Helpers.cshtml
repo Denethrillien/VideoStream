@@ -7,7 +7,7 @@
             string divObjectTagId = "silverlightControlHost",
             string iFrameStyle = "visibility:hidden;height:0px;width:0px;border:0px"
             ){
-            <div id="@divObjectTagId">
+            <div id="@divObjectTagId" class="SLContainer ShadowBox">
                 <object data="data:application/x-silverlight-2," type="application/x-silverlight-2" width="@objectContainerWidth" height="@objectContainerHeight">
                     <param name="source" value="@silverlightXapFileLocation" />
                     <param name="minRuntimeVersion" value="@minimumRuntimeVersion" />
