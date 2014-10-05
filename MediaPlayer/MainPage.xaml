@@ -12,18 +12,18 @@
             <ImageBrush ImageSource="/GraphicComponents/PlayerLogo.png"/>
         </Grid.Background>
         <MediaElement  Stretch="Fill"  Source="" AutoPlay="False" MediaOpened="MediaElement_MediaOpened" />
-        <sdk:Label Name="currentMedia" HorizontalAlignment="Right" Height="28" VerticalAlignment="Top" Width="250" Padding="0 5 10 0" Content="Now Playing"/>
-        <ProgressBar Height="6" HorizontalAlignment="Left" VerticalAlignment="Bottom" Name="permanentBar" Width="420" Opacity="0.4" Visibility="Collapsed" Value="{Binding Position.TotalMilliseconds, ElementName=mediaScreen, Mode=OneWay}" />
-        <Rectangle Width="420" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Left" Fill="Transparent" MouseEnter="Rectangle_MouseEnter" />
+        <sdk:Label Name="currentMedia" HorizontalAlignment="Right" Height="28" VerticalAlignment="Top" Width="450" Padding="0 5 10 0" Content="Now Playing"/>
+        <ProgressBar Name="bottomBar" HorizontalAlignment="Left" Height="4" Margin="0,277,0,0" VerticalAlignment="Top" Width="460" Visibility="Collapsed" Value="{Binding Position.TotalMilliseconds, ElementName=mediaScreen, Mode=OneWay}"/>
+        <Rectangle Width="460" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Left" Fill="Transparent" MouseEnter="showControls" />
         <!--Canvas containing media controls-->
-        <Canvas Height="40" HorizontalAlignment="Left" Name="Controls" VerticalAlignment="Bottom" Width="460" Background ="White" Opacity="0.4" MouseLeave="Controls_MouseLeave" >
-            <ProgressBar Height="14" Name="ProgBar" Width="347" Canvas.Left="48" Canvas.Top="12" VerticalAlignment="Bottom" Value="{Binding Position.TotalMilliseconds, ElementName=mediaScreen, Mode=OneWay}" />
-            <Button Cursor="Hand" Canvas.Left="6" Canvas.Top="6" Content="&#x25b7;" Height="28" Name="PlayBtn" FontFamily="Arial" Width="34" VerticalAlignment="Bottom" Click="PlayBtn_Click">
+        <Canvas Height="40" HorizontalAlignment="Left" Name="controls" VerticalAlignment="Bottom" Width="460" Background ="White" Opacity="0.4" MouseLeave="hideControls" >
+            <ProgressBar Height="20" Name="ProgBar" Width="350" Canvas.Left="48" Canvas.Top="9" VerticalAlignment="Bottom" Value="{Binding Position.TotalMilliseconds, ElementName=mediaScreen, Mode=OneWay}" />
+            <Button Cursor="Hand" Canvas.Left="9" Canvas.Top="5" Content="&#x25b7;" Height="28" Name="PlayBtn" FontFamily="Arial" Width="34" VerticalAlignment="Bottom" Click="PlayBtn_Click">
                 <ToolTipService.ToolTip>
                     <ToolTip Content="Play/Pause" />
                 </ToolTipService.ToolTip>
             </Button>
-            <Button Cursor="Hand" Canvas.Left="403" Canvas.Top="9" Height="20" Name="VolBtn" Width="20" VerticalAlignment="Bottom" Click="VolBtn_Click" MouseEnter="showVol" >
+            <Button Cursor="Hand" Canvas.Left="404" Canvas.Top="9" Height="20" Name="VolBtn" Width="20" VerticalAlignment="Bottom" Click="VolBtn_Click" MouseEnter="showVol" >
                 <ToolTipService.ToolTip>
                     <ToolTip Content="Mute" />
                 </ToolTipService.ToolTip>
@@ -33,8 +33,8 @@
                     <ToolTip Content="Fullscreen" />
                 </ToolTipService.ToolTip>
             </Button>
-            <Slider Canvas.Left="360" Orientation="Vertical" Canvas.Top="-88" Height="100" Name="volSlider" Width="35" ValueChanged="volSlider_ValueChanged" MouseLeave="hideVol" Visibility="Collapsed" />
-            <Slider Canvas.Left="48" Canvas.Top="9" Height="16" Name="progSlider" Width="347" MouseEnter="hideVol" ValueChanged="progSlider_ValueChanged" Opacity="0" />
+            <Slider Canvas.Left="396" Orientation="Vertical" Canvas.Top="-94" Height="105" Name="volSlider" Width="35" Visibility="Collapsed" ValueChanged="volSlider_ValueChanged" MouseLeave="hideVol" />
+            <Slider Canvas.Left="48" Cursor="Hand" Height="20" Name="progSlider" Width="358" MouseEnter="hideVol" ValueChanged="progSlider_ValueChanged" Opacity="0" Canvas.Top="9" />
         </Canvas>
     </Grid>
 </UserControl>
