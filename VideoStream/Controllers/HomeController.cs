@@ -16,5 +16,10 @@ namespace VideoStream.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult UserProfile()
+        {
+            return View();
+        }
     }
 }
