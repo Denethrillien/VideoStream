@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="UserInfo">
+    Primary user information. Position: left. Content: User avatar, username, optionals (Age, sex, location), profile comment
+</div>
+<div class="UserMedia">
+    <h2>
+        Featured
+    </h2>
+    @Helpers.SilverLightHostControl("/ClientBin/MediaPlayer.xap")
+</div>
+<div class="UserGuestBook">
+    Other users' comments.
+</div>
