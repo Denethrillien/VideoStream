@@ -1,17 +1,30 @@
 ﻿@model VideoStream.Models.UserModel
 
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true, "Invalid username or password");
-    <div>
-        <fieldset>
+    <div class="PopUp ShadowBox">
+        <fieldset class="Fieldset">
             <legend>
                 Login |
-                @Html.ActionLink("Register", "Register", "User")
+                @Html.ActionLink("Register", "_Register", "User")
             </legend>
-                @Html.TextBoxFor(u => u.email, new { placeholder = "Username", @class = "TextBox" })
-                @Html.PasswordFor(u => u.password, new { placeholder = "Password", @class = "TextBox" })
-                <input type="submit" name="Login" value="Go!" />
+            <div class="RegForm">
+                @Html.TextBoxFor(u => u.email, new { placeholder = "Username", @class = "RegBox" })
+                @Html.ValidationMessageFor(u => u.email)
+            </div>
+            <div class="RegForm">
+                @Html.PasswordFor(u => u.password, new { placeholder = "Password", @class = "RegBox" })
+                @Html.ValidationMessageFor(u => u.password)
+            </div>
+            <div class="RegForm">
+                <input type="submit" value="Login" />
+            </div>
         </fieldset>
     </div>
 }

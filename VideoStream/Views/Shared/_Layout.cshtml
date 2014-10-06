@@ -5,23 +5,65 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link rel="shortcut icon" type="image/x-icon" href=@Url.Content("~/Images/Page/favicon.png") />
-    <link rel="stylesheet" href="@Url.Content("~/Content/Site.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Site.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/themes/base/jquery.ui.all.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.5.1.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.11.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")"></script>
+    <script type="text/javascript">
+
+        $.ajaxSetup({ cache: false });
+
+        $(document).ready(function () {
+            $(".openDialog").live("click", function (e) {
+                e.preventDefault();
+
+                $("<div></div>")
+                    .addClass("dialog")
+                    .attr("id", $(this)
+                    .attr("data-dialog-id"))
+                    .appendTo("body")
+                    .dialog({
+                        title: $(this).attr("data-dialog-title"),
+                        close: function () { $(this).remove(); },
+                        modal: true,
+                        width: 300,
+                        left: 0
+
+                    })
+                    .load(this.href);
+            });
+
+            $(".close").live("click", function (e) {
+                e.preventDefault();
+                $(this).closest(".dialog").dialog("close");
+            });
+        });
+    </script>
 </head>
 <body>
     <header id="header">
         <div id="loginDisplay">
-            @if (Request.IsAuthenticated) 
-            { 
+
+            @if (Request.IsAuthenticated)
+            {
                 @Html.Encode(User.Identity.Name)
+                <span>
+                    |
+                </span>
+                @Html.ActionLink("Messenger", "_Messenger", "U2U", null, new { @class = "openDialog", data_dialog_id = "msgDialog" })
+                <span>
+                    |
+                </span>
                 @Html.ActionLink("Log Out", "Logout", "User")
             }
             else
             {
-                @Html.ActionLink("Log In", "Login", "User")
+                @Html.ActionLink("Log In", "_Login", "User", null, new { @class = "openDialog", data_dialog_id = "logInDialog" })
                 <span>
                     |
                 </span>
-                @Html.ActionLink("Register", "Register", "User")
+                @Html.ActionLink("Register", "_Register", "User", null, new { @class = "openDialog", data_dialog_id = "regDialog" })
             }
         </div>
     </header>
@@ -40,10 +82,11 @@
         @RenderBody()
     </div>
     <div id="footer">
-        PEAmeia 0.0.2 All images are the property of their respective owners.
+        PEAmeia 0.0.2 &copy; 2014 Alex Hage. All third-party content belongs to the respective owners.
         <div>
             <a href="About.aspx">About</a> | <a href="FAQ.aspx">FAQ</a>
         </div>
     </div>
 </body>
+
 </html>
