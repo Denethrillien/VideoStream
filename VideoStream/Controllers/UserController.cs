@@ -73,6 +73,12 @@ namespace VideoStream.Controllers
             return View(user);
         }
 
+        [HttpGet]
+        public ActionResult _Messenger()
+        {
+            return View();
+        }
+
         public ActionResult Logout() 
         {
             FormsAuthentication.SignOut();

@@ -218,6 +218,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\User\_Login.cshtml" />
     <Content Include="Views\User\_Register.cshtml" />
+    <Content Include="Views\User\_Messenger.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="MainDataModel.edmx">
