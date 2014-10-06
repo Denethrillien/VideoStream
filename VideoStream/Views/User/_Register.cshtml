@@ -2,13 +2,13 @@
 
 @{
     ViewBag.Title = "Register";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
-@using(Html.BeginForm())
+@using (Html.BeginForm())
 {
     @Html.ValidationSummary(true, "User registration incomplete. Please check your input data.");
-    <div>
+    <div class="PopUp ShadowBox">
         <fieldset class="Fieldset">
             <legend>
                 User account registration
@@ -21,7 +21,7 @@
             </div>
             <div>
                 @Html.TextBoxFor(u => u.password, new { placeholder = "Password", @class = "RegBox" })
-            </div class="RegForm">
+            </div>
             <div class="RegForm">
                 <input type="submit" value="Go!" />
             </div>
