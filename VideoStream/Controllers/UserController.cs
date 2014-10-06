@@ -18,13 +18,13 @@ namespace VideoStream.Controllers
         }
 
         [HttpGet]
-        public ActionResult Login()
+        public ActionResult _Login()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Login(Models.UserModel user)
+        public ActionResult _Login(Models.UserModel user)
         {
             if (ModelState.IsValid)
             {
@@ -42,13 +42,13 @@ namespace VideoStream.Controllers
         }
 
         [HttpGet]
-        public ActionResult Register() 
+        public ActionResult _Register() 
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Register(Models.UserModel user)
+        public ActionResult _Register(Models.UserModel user)
         {
             if (ModelState.IsValid)
             {

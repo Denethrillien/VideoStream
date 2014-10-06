@@ -171,3 +171,9 @@ nav
     width:460px; 
     height: 281px; 
 }
+/*Popups*/
+.PopUp 
+{
+    background-color: #ffffff;
+    width: 250px;
+}
