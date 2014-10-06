@@ -12,11 +12,6 @@ namespace VideoStream.Controllers
         //
         // GET: /User/
 
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         [HttpGet]
         public ActionResult _Login()
         {

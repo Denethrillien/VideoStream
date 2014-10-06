@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\U2UController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -218,7 +219,10 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\User\_Login.cshtml" />
     <Content Include="Views\User\_Register.cshtml" />
-    <Content Include="Views\User\_Messenger.cshtml" />
+    <Content Include="Views\U2U\_Messenger.cshtml" />
+    <Content Include="Views\U2U\_Inbox.cshtml" />
+    <Content Include="Views\U2U\_Compose.cshtml" />
+    <Content Include="Views\U2U\_Sent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="MainDataModel.edmx">
@@ -252,9 +256,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\UserProfile.cshtml" />
