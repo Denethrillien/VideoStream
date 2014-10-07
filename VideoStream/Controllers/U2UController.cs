@@ -15,7 +15,7 @@ namespace VideoStream.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                return View();
+                return PartialView();
             }
             else
             {
@@ -27,7 +27,7 @@ namespace VideoStream.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                return View();
+                return PartialView();
             }
             else
             {
@@ -39,7 +39,7 @@ namespace VideoStream.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                return View();
+                return PartialView();
             }
             else
             {
@@ -51,7 +51,7 @@ namespace VideoStream.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                return View();
+                return PartialView();
             }
             else
             {
@@ -61,7 +61,11 @@ namespace VideoStream.Controllers
         [HttpGet]
         public ActionResult _Guestbook()
         {
-            return View();
+            return PartialView();
+        }
+        public ActionResult _ClearGuestBookComposer()
+        {
+            return PartialView();
         }
     }
 }

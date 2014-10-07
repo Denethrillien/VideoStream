@@ -4,5 +4,5 @@
     @Html.TextAreaFor(u => u.entry,  new { placeholder = "Write your message here...", @class = "NewEntry" })
 </div>
 <div id="composeControls">
-    Post | Close
+    Post | @Ajax.ActionLink("Close", "_ClearGuestBookComposer", "U2U", new AjaxOptions { UpdateTargetId = "addEntry" })
 </div>

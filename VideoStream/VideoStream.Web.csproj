@@ -245,6 +245,7 @@
     <Content Include="Views\U2U\_Sent.cshtml" />
     <Content Include="Views\U2U\_Comment.cshtml" />
     <Content Include="Views\U2U\_Compose.cshtml" />
+    <Content Include="Views\U2U\_ClearGuestBookComposer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
