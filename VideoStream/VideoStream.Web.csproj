@@ -141,6 +141,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MainDataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users.cs">
@@ -223,6 +224,7 @@
     <Content Include="Views\U2U\_Inbox.cshtml" />
     <Content Include="Views\U2U\_Compose.cshtml" />
     <Content Include="Views\U2U\_Sent.cshtml" />
+    <Content Include="Views\U2U\_Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="MainDataModel.edmx">

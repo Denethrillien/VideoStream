@@ -58,5 +58,10 @@ namespace VideoStream.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
+        [HttpGet]
+        public ActionResult _Comment()
+        {
+            return View();
+        }
     }
 }
