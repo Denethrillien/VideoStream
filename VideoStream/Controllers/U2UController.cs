@@ -59,7 +59,7 @@ namespace VideoStream.Controllers
             }
         }
         [HttpGet]
-        public ActionResult _Comment()
+        public ActionResult _Guestbook()
         {
             return View();
         }

@@ -1,1 +1,8 @@
-﻿<p>Composing new message will take place here.</p>
+﻿@model VideoStream.Models.CommentModel
+
+<div id="compose">
+    @Html.TextAreaFor(u => u.entry,  new { placeholder = "Write your message here...", @class = "NewEntry" })
+</div>
+<div id="composeControls">
+    Post | Close
+</div>

@@ -25,6 +25,7 @@ namespace VideoStream
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Guestbook> Guestbook { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }
 }

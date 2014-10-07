@@ -12,19 +12,14 @@ namespace VideoStream
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class Guestbook
     {
-        public Users()
-        {
-            this.Guestbook = new HashSet<Guestbook>();
-        }
-    
+        public int entry_id { get; set; }
+        public int author_id { get; set; }
         public int user_id { get; set; }
-        public string user_name { get; set; }
-        public string user_email { get; set; }
-        public string password { get; set; }
-        public string password_salt { get; set; }
+        public System.DateTime date_and_time { get; set; }
+        public string entry { get; set; }
     
-        public virtual ICollection<Guestbook> Guestbook { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

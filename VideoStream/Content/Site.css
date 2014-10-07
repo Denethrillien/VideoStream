@@ -177,3 +177,11 @@ nav
     background-color: #ffffff;
     width: 250px;
 }
+
+.NewEntry
+{
+    width: 455px;
+    height: 100px;
+    margin-top: 1px;
+    resize: vertical;
+}

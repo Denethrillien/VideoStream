@@ -9,9 +9,10 @@ namespace VideoStream.Models
     public class CommentModel
     {
         [Required]
-        [DataType(DataType.Text)]
-        [StringLength(50)]
         public string author { get; set; }
+
+        [Required]
+        public string recipient { get; set; }
 
         [Required]
         [DataType(DataType.DateTime)]
@@ -19,6 +20,6 @@ namespace VideoStream.Models
 
         [Required]
         [DataType(DataType.Text)]
-        public string comment { get; set; }
+        public string entry { get; set; }
     }
 }
