@@ -10,25 +10,53 @@ namespace VideoStream.Controllers
     {
         //
         // GET: /U2U/
-
+        [HttpGet]
         public ActionResult _Messenger()
         {
-            return View();
+            if (Request.IsAuthenticated)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
-
+        [HttpGet]
         public ActionResult _Inbox()
         {
-            return View();
+            if (Request.IsAuthenticated)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
-
+        [HttpGet]
         public ActionResult _Compose()
         {
-            return View();
+            if (Request.IsAuthenticated)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
-
+        [HttpGet]
         public ActionResult _Sent()
         {
-            return View();
+            if (Request.IsAuthenticated)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
     }
 }
