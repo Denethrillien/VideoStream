@@ -16,11 +16,11 @@
         <div id="addEntry">
             @if(Request.IsAuthenticated)
             {
-                @Ajax.ActionLink("New", "_Compose", "U2U", new AjaxOptions { UpdateTargetId = "addEntry" })
+                @Ajax.ActionLink("New ", "_Compose", "U2U", new AjaxOptions { UpdateTargetId = "addEntry" })
             }
         </div>
-        <div id="posts">
-            User posts
+        <div id="entries">
+            All comments from other users with respective replies will be read from the DB and added here.
         </div>
     </div>
 </div>

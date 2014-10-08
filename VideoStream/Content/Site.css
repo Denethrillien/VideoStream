@@ -185,3 +185,8 @@ nav
     margin-top: 1px;
     resize: vertical;
 }
+
+#addEntry 
+{
+    text-align: right;
+}
