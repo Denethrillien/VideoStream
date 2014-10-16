@@ -29,7 +29,6 @@
                         modal: true,
                         width: 300,
                         left: 0
-
                     })
                     .load(this.href);
             });
@@ -44,7 +43,6 @@
 <body>
     <header id="header">
         <div id="loginDisplay">
-
             @if (Request.IsAuthenticated)
             {
                 @Html.Encode(User.Identity.Name)

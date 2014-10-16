@@ -1,14 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DataModelStoreContainer" CdmEntityContainer="DataEntities">
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="DataModel.Comments">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="entry_id" ColumnName="entry_id" />
+          <ScalarProperty Name="author_id" ColumnName="author_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="date_and_time" ColumnName="date_and_time" />
+          <ScalarProperty Name="entry" ColumnName="entry" />
+          <ScalarProperty Name="is_comment_for" ColumnName="is_comment_for" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="DataModel.Users">
         <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="E_mail" ColumnName="E-mail" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="password_salt" ColumnName="password_salt" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

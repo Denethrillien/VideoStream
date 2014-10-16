@@ -1,1 +1,12 @@
-﻿<p>Composing new message will take place here.</p>
+﻿@model VideoStream.Models.CommentModel
+
+@using (Html.BeginForm())
+{
+    <fieldset class="Fieldset">
+        <div id="compose">
+            @Html.TextAreaFor(u => u.entry, new { placeholder = "Write your message here...", @class = "NewEntry" })
+        </div>
+        <input type="submit" value="Post" />
+    </fieldset>
+}
+@Ajax.ActionLink("Close ", "_ClearGuestBookComposer", "U2U", new AjaxOptions { UpdateTargetId = "addEntry" })

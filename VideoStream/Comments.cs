@@ -12,21 +12,16 @@ namespace VideoStream
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class Comments
     {
-        public Users()
-        {
-            this.Comments = new HashSet<Comments>();
-            this.Comments1 = new HashSet<Comments>();
-        }
-    
+        public int entry_id { get; set; }
+        public int author_id { get; set; }
         public int user_id { get; set; }
-        public string user_name { get; set; }
-        public string user_email { get; set; }
-        public string password { get; set; }
-        public string password_salt { get; set; }
+        public System.DateTime date_and_time { get; set; }
+        public string entry { get; set; }
+        public Nullable<int> is_comment_for { get; set; }
     
-        public virtual ICollection<Comments> Comments { get; set; }
-        public virtual ICollection<Comments> Comments1 { get; set; }
+        public virtual Users Users { get; set; }
+        public virtual Users Users1 { get; set; }
     }
 }

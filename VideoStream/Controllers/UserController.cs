@@ -53,11 +53,10 @@ namespace VideoStream.Controllers
                     var encryptedPassword = crypto.Compute(user.password);
                     var newUser = db.Users.Create();
 
-                    newUser.E_mail = user.email;
-                    newUser.Password = encryptedPassword;
-                    newUser.PasswordSalt = crypto.Salt;
-                    newUser.UserID = Guid.NewGuid();
-                    newUser.Username = user.userName;
+                    newUser.user_email = user.email;
+                    newUser.password = encryptedPassword;
+                    newUser.password_salt = crypto.Salt;
+                    newUser.user_name = user.userName;
 
                     db.Users.Add(newUser);
                     db.SaveChanges();
@@ -87,12 +86,12 @@ namespace VideoStream.Controllers
 
             using(var db = new DataEntities())
             {
-                var user = db.Users.FirstOrDefault(u => u.E_mail == eMail);
+                var user = db.Users.FirstOrDefault(u => u.user_email == eMail);
                 //If the user exists,
                 if (user != null) 
                 { 
                     //continue validating.
-                    if (user.Password == crypto.Compute(password, user.PasswordSalt))
+                    if (user.password == crypto.Compute(password, user.password_salt))
                     { 
                         //Validated
                         isValid = true;

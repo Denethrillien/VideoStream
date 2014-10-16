@@ -4,8 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c7ac2cbac2814ba7aa9a013c63fb8100" Name="Diagram1">
-        <EntityTypeShape EntityType="DataModel.Users" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="e0f1ffa642624662bde90491d6246e56" Name="Diagram1">
+        <EntityTypeShape EntityType="DataModel.Comments" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModel.Users" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="DataModel.FK__Comments__author__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModel.FK__Comments__user_i__17036CC0" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

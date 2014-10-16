@@ -12,8 +12,16 @@
     <div class="SLContainer">
         @Helpers.SilverLightHostControl("/ClientBin/MediaPlayer.xap")
     </div>
-    <div class="UserGuestBook ShadowBox">
-        Other users' comments.
+    <div id="userGuestbook" class="UserGuestBook ShadowBox">
+        <div id="addEntry">
+            @if(Request.IsAuthenticated)
+            {
+                @Ajax.ActionLink("New ", "_Compose", "U2U", new AjaxOptions { UpdateTargetId = "addEntry" })
+            }
+        </div>
+        <div id="entries">
+            @Html.Action("_Comment", "U2U")
+        </div>
     </div>
 </div>
 <div class="UserRelated ShadowBox">

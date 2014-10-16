@@ -177,3 +177,24 @@ nav
     background-color: #ffffff;
     width: 250px;
 }
+
+.NewEntry
+{
+    width: 455px;
+    height: 100px;
+    margin-top: 1px;
+    resize: vertical;
+}
+
+#addEntry 
+{
+    text-align: right;
+}
+
+#commentActions 
+{
+    width: 455px;
+    text-align: right;
+    padding-top: 2px;
+    border-bottom: solid 1px gray;
+}

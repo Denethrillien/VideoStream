@@ -1,0 +1,15 @@
+﻿@model IList<VideoStream.Models.CommentModel>
+
+@foreach (var item in Model)
+{
+    <div id="commentDetails">
+        @item.author_name wrote on @item.dateTime.ToLocalTime()
+    </div>
+    <div id="commentBody">
+        @item.entry
+    </div>
+    <div id="commentActions">
+        <!--User operations-->
+        Delete | Hide | Rate
+    </div>
+}
