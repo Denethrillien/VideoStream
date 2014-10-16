@@ -12,7 +12,7 @@ namespace VideoStream
     using System;
     using System.Collections.Generic;
     
-    public partial class Guestbook
+    public partial class Comments
     {
         public int entry_id { get; set; }
         public int author_id { get; set; }

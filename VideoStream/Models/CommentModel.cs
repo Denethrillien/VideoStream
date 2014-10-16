@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -24,5 +25,6 @@ namespace VideoStream.Models
 
         public Nullable<int> isCommentFor { get; set; }
 
+        public string author_name { get; set; }
     }
 }

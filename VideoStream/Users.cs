@@ -16,8 +16,8 @@ namespace VideoStream
     {
         public Users()
         {
-            this.Guestbook = new HashSet<Guestbook>();
-            this.Guestbook1 = new HashSet<Guestbook>();
+            this.Comments = new HashSet<Comments>();
+            this.Comments1 = new HashSet<Comments>();
         }
     
         public int user_id { get; set; }
@@ -26,7 +26,7 @@ namespace VideoStream
         public string password { get; set; }
         public string password_salt { get; set; }
     
-        public virtual ICollection<Guestbook> Guestbook { get; set; }
-        public virtual ICollection<Guestbook> Guestbook1 { get; set; }
+        public virtual ICollection<Comments> Comments { get; set; }
+        public virtual ICollection<Comments> Comments1 { get; set; }
     }
 }

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DataModelStoreContainer" CdmEntityContainer="DataEntities">
-    <EntitySetMapping Name="Guestbook">
-      <EntityTypeMapping TypeName="DataModel.Guestbook">
-        <MappingFragment StoreEntitySet="Guestbook">
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="DataModel.Comments">
+        <MappingFragment StoreEntitySet="Comments">
           <ScalarProperty Name="entry_id" ColumnName="entry_id" />
           <ScalarProperty Name="author_id" ColumnName="author_id" />
           <ScalarProperty Name="user_id" ColumnName="user_id" />

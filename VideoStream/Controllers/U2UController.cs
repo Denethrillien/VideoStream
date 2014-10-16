@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -37,7 +38,23 @@ namespace VideoStream.Controllers
         [HttpGet]
         public ActionResult _Comment()
         {
-            return PartialView();
+            var cm = new List<Models.CommentModel>();
+            using (var db = new DataEntities())
+            {
+                foreach (var item in db.Comments) 
+                {
+                    var c = new Models.CommentModel();
+                    c.author_name = item.Users.user_name;
+                    c.dateTime = item.date_and_time;
+                    c.entry = item.entry;
+                    c.isCommentFor = item.is_comment_for;
+                    c.recipient = item.user_id;
+
+                    cm.Add(c);
+                }
+                db.Database.Connection.Close();
+            }
+            return PartialView(cm);
         }
         [HttpGet]
         public ActionResult _Compose()
@@ -63,7 +80,7 @@ namespace VideoStream.Controllers
                 if ( ModelState.IsValid )
                 {
 
-                    var newPost = db.Guestbook.Create();
+                    var newPost = db.Comments.Create();
 
                     newPost.author_id = comment.author;
                     newPost.user_id = comment.recipient;
@@ -75,7 +92,7 @@ namespace VideoStream.Controllers
                         newPost.is_comment_for = comment.isCommentFor.Value;
                     }
 
-                    db.Guestbook.Add(newPost);
+                    db.Comments.Add(newPost);
                     db.SaveChanges();
 
                     return RedirectToAction("Index", "Home");

@@ -190,3 +190,11 @@ nav
 {
     text-align: right;
 }
+
+#commentActions 
+{
+    width: 455px;
+    text-align: right;
+    padding-top: 2px;
+    border-bottom: solid 1px gray;
+}

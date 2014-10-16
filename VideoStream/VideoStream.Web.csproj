@@ -120,14 +120,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comments.cs">
+      <DependentUpon>MainDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\U2UController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Guestbook.cs">
-      <DependentUpon>MainDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MainDataModel.Context.cs">
       <AutoGen>True</AutoGen>
