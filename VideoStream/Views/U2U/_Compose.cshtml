@@ -1,8 +1,12 @@
 ﻿@model VideoStream.Models.CommentModel
 
-<div id="compose">
-    @Html.TextAreaFor(u => u.entry,  new { placeholder = "Write your message here...", @class = "NewEntry" })
-</div>
-<div id="composeControls">
-    Post | @Ajax.ActionLink("Close ", "_ClearGuestBookComposer", "U2U", new AjaxOptions { UpdateTargetId = "addEntry" })
-</div>
+@using (Html.BeginForm())
+{
+    <fieldset class="Fieldset">
+        <div id="compose">
+            @Html.TextAreaFor(u => u.entry, new { placeholder = "Write your message here...", @class = "NewEntry" })
+        </div>
+        <input type="submit" value="Post" />
+    </fieldset>
+}
+@Ajax.ActionLink("Close ", "_ClearGuestBookComposer", "U2U", new AjaxOptions { UpdateTargetId = "addEntry" })

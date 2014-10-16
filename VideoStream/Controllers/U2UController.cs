@@ -35,6 +35,11 @@ namespace VideoStream.Controllers
             }
         }
         [HttpGet]
+        public ActionResult _Comment()
+        {
+            return PartialView();
+        }
+        [HttpGet]
         public ActionResult _Compose()
         {
             if (Request.IsAuthenticated)
@@ -45,6 +50,39 @@ namespace VideoStream.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
+        }
+        [HttpPost]
+        public ActionResult _Compose(Models.CommentModel comment)
+        {
+            using (var db = new DataEntities())
+            {
+                comment.dateTime = System.DateTime.UtcNow;
+                comment.author = db.Users.FirstOrDefault(u => u.user_email == "just-alex@live.no").user_id;
+                comment.recipient = db.Users.FirstOrDefault(u => u.user_email == "just-alex@live.no").user_id;
+
+                if ( ModelState.IsValid )
+                {
+
+                    var newPost = db.Guestbook.Create();
+
+                    newPost.author_id = comment.author;
+                    newPost.user_id = comment.recipient;
+                    newPost.date_and_time = comment.dateTime;
+                    newPost.entry = comment.entry;
+
+                    if (comment.isCommentFor.HasValue )
+                    {
+                        newPost.is_comment_for = comment.isCommentFor.Value;
+                    }
+
+                    db.Guestbook.Add(newPost);
+                    db.SaveChanges();
+
+                    return RedirectToAction("Index", "Home");
+                }
+                return View(comment);
+            }
+
         }
         [HttpGet]
         public ActionResult _Sent()

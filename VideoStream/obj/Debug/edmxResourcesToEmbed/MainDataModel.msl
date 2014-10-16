@@ -9,6 +9,7 @@
           <ScalarProperty Name="user_id" ColumnName="user_id" />
           <ScalarProperty Name="date_and_time" ColumnName="date_and_time" />
           <ScalarProperty Name="entry" ColumnName="entry" />
+          <ScalarProperty Name="is_comment_for" ColumnName="is_comment_for" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

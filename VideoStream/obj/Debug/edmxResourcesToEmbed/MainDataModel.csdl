@@ -9,7 +9,9 @@
     <Property Name="user_id" Type="Int32" Nullable="false" />
     <Property Name="date_and_time" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="entry" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Users" Relationship="Self.FK__Guestbook__user___1273C1CD" FromRole="Guestbook" ToRole="Users" />
+    <Property Name="is_comment_for" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Guestbook__autho__5AEE82B9" FromRole="Guestbook" ToRole="Users" />
+    <NavigationProperty Name="Users1" Relationship="Self.FK__Guestbook__user___5BE2A6F2" FromRole="Guestbook" ToRole="Users" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -20,9 +22,22 @@
     <Property Name="user_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="password_salt" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Guestbook" Relationship="Self.FK__Guestbook__user___1273C1CD" FromRole="Users" ToRole="Guestbook" />
+    <NavigationProperty Name="Guestbook" Relationship="Self.FK__Guestbook__autho__5AEE82B9" FromRole="Users" ToRole="Guestbook" />
+    <NavigationProperty Name="Guestbook1" Relationship="Self.FK__Guestbook__user___5BE2A6F2" FromRole="Users" ToRole="Guestbook" />
   </EntityType>
-  <Association Name="FK__Guestbook__user___1273C1CD">
+  <Association Name="FK__Guestbook__autho__5AEE82B9">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Guestbook" Type="Self.Guestbook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Guestbook">
+        <PropertyRef Name="author_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Guestbook__user___5BE2A6F2">
     <End Role="Users" Type="Self.Users" Multiplicity="1" />
     <End Role="Guestbook" Type="Self.Guestbook" Multiplicity="*" />
     <ReferentialConstraint>
@@ -37,7 +52,11 @@
   <EntityContainer Name="DataEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Guestbook" EntityType="Self.Guestbook" />
     <EntitySet Name="Users" EntityType="Self.Users" />
-    <AssociationSet Name="FK__Guestbook__user___1273C1CD" Association="Self.FK__Guestbook__user___1273C1CD">
+    <AssociationSet Name="FK__Guestbook__autho__5AEE82B9" Association="Self.FK__Guestbook__autho__5AEE82B9">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Guestbook" EntitySet="Guestbook" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Guestbook__user___5BE2A6F2" Association="Self.FK__Guestbook__user___5BE2A6F2">
       <End Role="Users" EntitySet="Users" />
       <End Role="Guestbook" EntitySet="Guestbook" />
     </AssociationSet>

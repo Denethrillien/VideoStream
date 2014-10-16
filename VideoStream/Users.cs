@@ -17,6 +17,7 @@ namespace VideoStream
         public Users()
         {
             this.Guestbook = new HashSet<Guestbook>();
+            this.Guestbook1 = new HashSet<Guestbook>();
         }
     
         public int user_id { get; set; }
@@ -26,5 +27,6 @@ namespace VideoStream
         public string password_salt { get; set; }
     
         public virtual ICollection<Guestbook> Guestbook { get; set; }
+        public virtual ICollection<Guestbook> Guestbook1 { get; set; }
     }
 }

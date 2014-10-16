@@ -19,7 +19,9 @@ namespace VideoStream
         public int user_id { get; set; }
         public System.DateTime date_and_time { get; set; }
         public string entry { get; set; }
+        public Nullable<int> is_comment_for { get; set; }
     
         public virtual Users Users { get; set; }
+        public virtual Users Users1 { get; set; }
     }
 }
