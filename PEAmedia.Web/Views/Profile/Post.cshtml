@@ -1,0 +1,12 @@
+﻿@model PEAmedia.Web.Models.Profile_Comment
+@using (Html.BeginForm())
+{
+        <div id="compose">
+            @Html.TextAreaFor(u => u.Entry, new { placeholder = "Write your message here...", @class = "CommentBox" })
+        </div>
+        <a href="javascript:void(0)" class="SubmitForm">Send</a>
+        <span>
+            |
+        </span>
+        @Ajax.ActionLink("Close ", "ClearContainer", "Profile", new AjaxOptions { UpdateTargetId = "addEntry" })
+}

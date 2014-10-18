@@ -1,0 +1,56 @@
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\PEAmedia.Web.dll.config
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\PEAmedia.Web.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\PEAmedia.Web.pdb
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\Antlr3.Runtime.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\EntityFramework.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\Microsoft.Web.Infrastructure.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\Newtonsoft.Json.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\System.Web.Mvc.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\System.Web.Optimization.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\System.Web.Providers.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\System.Web.Razor.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\System.Web.WebPages.Deployment.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\System.Web.WebPages.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\System.Web.WebPages.Razor.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\WebGrease.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\EntityFramework.xml
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\Newtonsoft.Json.xml
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\System.Web.Mvc.xml
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\System.Web.Razor.xml
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\System.Web.WebPages.xml
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\System.Web.WebPages.Deployment.xml
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\System.Web.WebPages.Razor.xml
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\obj\Debug\PEAmedia.Web.csprojResolveAssemblyReference.cache
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\obj\Debug\PEAmedia.Web.dll
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\obj\Debug\PEAmedia.Web.pdb
+c:\users\alex\documents\visual studio 2013\Projects\PEAmedia\PEAmedia.Web\bin\SimpleCrypto.dll
+C:\Users\Alex\Documents\Visual Studio 2013\Projects\PEAmedia\PEAmedia.Web\obj\Debug\PEAmedia.Web.g.resources
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\PEAmedia.Web.dll.config
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\PEAmedia.Web.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\PEAmedia.Web.pdb
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\Antlr3.Runtime.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\EntityFramework.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\Newtonsoft.Json.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\SimpleCrypto.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\System.Web.Mvc.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\System.Web.Optimization.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\System.Web.Providers.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\System.Web.Razor.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\System.Web.WebPages.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\WebGrease.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\EntityFramework.xml
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\Newtonsoft.Json.xml
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\System.Web.Mvc.xml
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\System.Web.Razor.xml
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\System.Web.WebPages.xml
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\obj\Debug\PEAmedia.Web.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\obj\Debug\PEAmedia.Web.g.resources
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\obj\Debug\PEAmedia.Web.dll
+C:\Users\Alex\Documents\VideoStream\PEAmedia.Web\obj\Debug\PEAmedia.Web.pdb

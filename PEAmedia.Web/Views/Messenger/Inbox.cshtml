@@ -1,0 +1,20 @@
+﻿@model IEnumerable<PEAmedia.Web.Models.Message>
+@{
+    ViewBag.Title = "Inbox";
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+    <div id="messageHeader">
+        @item.Sender wrote on @item.Date.ToLocalTime()
+    </div>
+    <section id="messageTitle">
+        @item.Title
+    </section>
+    <section id="message">
+        @item.Entry
+    </section>
+    <div id="messageMenu">
+        Reply | Delete | Flag
+    </div>
+}

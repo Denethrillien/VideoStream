@@ -1,2 +1,0 @@
-C:\Users\Alex\Documents\VideoStream\MediaPlayer
-Generated_Code\VideoStream.g.cs

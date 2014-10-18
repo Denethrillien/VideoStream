@@ -1,0 +1,31 @@
+﻿@model PEAmedia.Web.Models.UserProfile
+
+@{
+    ViewBag.Title = "UserProfile";
+}
+
+<div id="featured">
+    <h2>@Model.userName's Profile</h2>
+</div>
+<div class="UserMedia">
+    <div class="SLContainer">
+        <!-- Path and title hardcoded for testing. -->
+        @Helpers.SilverLightHostControl("/ClientBin/PEAmedia.Player.xap", "/Media/What A Day.mp3", "Newest by Alex: What A Day")
+    </div>
+    <div id="userGuestbook" class="UserGuestBook ShadowBox">
+        <div id="addEntry">
+            @if (Request.IsAuthenticated)
+            {
+                @Ajax.ActionLink("New ", "Post", "Profile", new AjaxOptions { UpdateTargetId = "addEntry" })
+            }
+        </div>
+        <div id="entries">
+        </div>
+    </div>
+</div>
+<div class="UserRelated ShadowBox">
+    Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here Related content goes here
+</div>
+<div class="UserInfo ShadowBox">
+    Primary user information. Position: left. Content: User avatar, username, optionals (Age, sex, location), profile comment
+</div>

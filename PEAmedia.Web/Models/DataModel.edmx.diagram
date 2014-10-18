@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cf275460cdcf4bb39f2c39bce30ac9be" Name="Diagram1">
+        <EntityTypeShape EntityType="DataModel.Users" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModel.Media_Files" Width="1.5" PointX="3" PointY="3.625" />
+        <EntityTypeShape EntityType="DataModel.Messages" Width="1.5" PointX="3" PointY="0.5" />
+        <AssociationConnector Association="DataModel.FK__Media_Fil__Uploa__36B12243" />
+        <AssociationConnector Association="DataModel.FK__Messages__Recipi__4AB81AF0" />
+        <AssociationConnector Association="DataModel.FK__Messages__Sender__49C3F6B7" />
+        <EntityTypeShape EntityType="DataModel.Profile_Comments" Width="1.5" PointX="4.75" PointY="1.875" />
+        <AssociationConnector Association="DataModel.FK__Profile_C__Autho__5CD6CB2B" />
+        <AssociationConnector Association="DataModel.FK__Profile_C__Recip__5DCAEF64" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

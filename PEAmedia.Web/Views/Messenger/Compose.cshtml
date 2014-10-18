@@ -1,0 +1,17 @@
+﻿@model PEAmedia.Web.Models.Message
+
+@using (Html.BeginForm())
+{
+    <fieldset class="Fieldset">
+        <div>
+            @Html.TextBoxFor(u => u.Recipient, new { placeholder = "To:", @class = "TextBox" })
+        </div>
+        <div>
+            @Html.TextBoxFor(u => u.Title, new { placeholder = "Subject", @class = "TextBox" })
+        </div>
+        <div id="compose">
+            @Html.TextAreaFor( u => u.Entry, new { placeholder = "Write your message here...", @class = "MessageBox" })
+        </div>
+        <a href="javascript:void(0)" class="SubmitForm">Send</a>
+    </fieldset>
+}

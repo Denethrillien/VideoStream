@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="User_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password_Salt" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Media_Files" Relationship="DataModel.FK__Media_Fil__Uploa__36B12243" FromRole="Users" ToRole="Media_Files" />
+    <NavigationProperty Name="Messages" Relationship="DataModel.FK__Messages__Recipi__4AB81AF0" FromRole="Users" ToRole="Messages" />
+    <NavigationProperty Name="Messages1" Relationship="DataModel.FK__Messages__Sender__49C3F6B7" FromRole="Users" ToRole="Messages" />
+    <NavigationProperty Name="Profile_Comments" Relationship="DataModel.FK__Profile_C__Autho__5CD6CB2B" FromRole="Users" ToRole="Profile_Comments" />
+    <NavigationProperty Name="Profile_Comments1" Relationship="DataModel.FK__Profile_C__Recip__5DCAEF64" FromRole="Users" ToRole="Profile_Comments" />
+  </EntityType>
+  <EntityContainer Name="DataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="Media_Files" EntityType="DataModel.Media_Files" />
+    <EntitySet Name="Messages" EntityType="DataModel.Messages" />
+    <AssociationSet Name="FK__Media_Fil__Uploa__36B12243" Association="DataModel.FK__Media_Fil__Uploa__36B12243">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Media_Files" EntitySet="Media_Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Messages__Recipi__4AB81AF0" Association="DataModel.FK__Messages__Recipi__4AB81AF0">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Messages__Sender__49C3F6B7" Association="DataModel.FK__Messages__Sender__49C3F6B7">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <EntitySet Name="Profile_Comments" EntityType="DataModel.Profile_Comments" />
+    <AssociationSet Name="FK__Profile_C__Autho__5CD6CB2B" Association="DataModel.FK__Profile_C__Autho__5CD6CB2B">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Profile_Comments" EntitySet="Profile_Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profile_C__Recip__5DCAEF64" Association="DataModel.FK__Profile_C__Recip__5DCAEF64">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Profile_Comments" EntitySet="Profile_Comments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Media_Files">
+    <Key>
+      <PropertyRef Name="Media_ID" />
+    </Key>
+    <Property Name="Media_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Media_Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Rel_Path" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Uploader_ID" Type="Int32" Nullable="false" />
+    <Property Name="Date_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Users" Relationship="DataModel.FK__Media_Fil__Uploa__36B12243" FromRole="Media_Files" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="Message_ID" />
+    </Key>
+    <Property Name="Message_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sender_ID" Type="Int32" Nullable="false" />
+    <Property Name="Recipient_ID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Users" Relationship="DataModel.FK__Messages__Recipi__4AB81AF0" FromRole="Messages" ToRole="Users" />
+    <NavigationProperty Name="Users1" Relationship="DataModel.FK__Messages__Sender__49C3F6B7" FromRole="Messages" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK__Media_Fil__Uploa__36B12243">
+    <End Type="DataModel.Users" Role="Users" Multiplicity="1" />
+    <End Type="DataModel.Media_Files" Role="Media_Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Media_Files">
+        <PropertyRef Name="Uploader_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Messages__Recipi__4AB81AF0">
+    <End Type="DataModel.Users" Role="Users" Multiplicity="1" />
+    <End Type="DataModel.Messages" Role="Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="Recipient_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Messages__Sender__49C3F6B7">
+    <End Type="DataModel.Users" Role="Users" Multiplicity="1" />
+    <End Type="DataModel.Messages" Role="Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="Sender_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Profile_Comments">
+    <Key>
+      <PropertyRef Name="Comment_ID" />
+    </Key>
+    <Property Name="Comment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Author_ID" Type="Int32" Nullable="false" />
+    <Property Name="Recipient_ID" Type="Int32" Nullable="false" />
+    <Property Name="Comment" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Is_Reply_To" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="DataModel.FK__Profile_C__Autho__5CD6CB2B" FromRole="Profile_Comments" ToRole="Users" />
+    <NavigationProperty Name="Users1" Relationship="DataModel.FK__Profile_C__Recip__5DCAEF64" FromRole="Profile_Comments" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK__Profile_C__Autho__5CD6CB2B">
+    <End Type="DataModel.Users" Role="Users" Multiplicity="1" />
+    <End Type="DataModel.Profile_Comments" Role="Profile_Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Profile_Comments">
+        <PropertyRef Name="Author_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profile_C__Recip__5DCAEF64">
+    <End Type="DataModel.Users" Role="Users" Multiplicity="1" />
+    <End Type="DataModel.Profile_Comments" Role="Profile_Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Profile_Comments">
+        <PropertyRef Name="Recipient_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
