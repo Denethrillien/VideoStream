@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Media_Files">
+          <Key>
+            <PropertyRef Name="Media_ID" />
+          </Key>
+          <Property Name="Media_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Media_Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Rel_Path" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Uploader_ID" Type="int" Nullable="false" />
+          <Property Name="Date_Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="Message_ID" />
+          </Key>
+          <Property Name="Message_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sender_ID" Type="int" Nullable="false" />
+          <Property Name="Recipient_ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Message" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Date_Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profile_Comments">
+          <Key>
+            <PropertyRef Name="Comment_ID" />
+          </Key>
+          <Property Name="Comment_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Author_ID" Type="int" Nullable="false" />
+          <Property Name="Recipient_ID" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Is_Reply_To" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Password_Salt" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Media_Fil__Uploa__36B12243">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Media_Files" Type="Self.Media_Files" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Media_Files">
+              <PropertyRef Name="Uploader_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Messages__Recipi__4AB81AF0">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="Recipient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Messages__Sender__49C3F6B7">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="Sender_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Profile_C__Autho__5CD6CB2B">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Profile_Comments" Type="Self.Profile_Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Profile_Comments">
+              <PropertyRef Name="Author_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Profile_C__Recip__5DCAEF64">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Profile_Comments" Type="Self.Profile_Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Profile_Comments">
+              <PropertyRef Name="Recipient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DataModelStoreContainer">
+          <EntitySet Name="Media_Files" EntityType="Self.Media_Files" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profile_Comments" EntityType="Self.Profile_Comments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Media_Fil__Uploa__36B12243" Association="Self.FK__Media_Fil__Uploa__36B12243">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Media_Files" EntitySet="Media_Files" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Messages__Recipi__4AB81AF0" Association="Self.FK__Messages__Recipi__4AB81AF0">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Messages__Sender__49C3F6B7" Association="Self.FK__Messages__Sender__49C3F6B7">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Profile_C__Autho__5CD6CB2B" Association="Self.FK__Profile_C__Autho__5CD6CB2B">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Profile_Comments" EntitySet="Profile_Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Profile_C__Recip__5DCAEF64" Association="Self.FK__Profile_C__Recip__5DCAEF64">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Profile_Comments" EntitySet="Profile_Comments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="User_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password_Salt" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Media_Files" Relationship="DataModel.FK__Media_Fil__Uploa__36B12243" FromRole="Users" ToRole="Media_Files" />
+          <NavigationProperty Name="Messages" Relationship="DataModel.FK__Messages__Recipi__4AB81AF0" FromRole="Users" ToRole="Messages" />
+          <NavigationProperty Name="Messages1" Relationship="DataModel.FK__Messages__Sender__49C3F6B7" FromRole="Users" ToRole="Messages" />
+          <NavigationProperty Name="Profile_Comments" Relationship="DataModel.FK__Profile_C__Autho__5CD6CB2B" FromRole="Users" ToRole="Profile_Comments" />
+          <NavigationProperty Name="Profile_Comments1" Relationship="DataModel.FK__Profile_C__Recip__5DCAEF64" FromRole="Users" ToRole="Profile_Comments" />
+        </EntityType>
+        <EntityContainer Name="DataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="Media_Files" EntityType="DataModel.Media_Files" />
+          <EntitySet Name="Messages" EntityType="DataModel.Messages" />
+          <AssociationSet Name="FK__Media_Fil__Uploa__36B12243" Association="DataModel.FK__Media_Fil__Uploa__36B12243">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Media_Files" EntitySet="Media_Files" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Messages__Recipi__4AB81AF0" Association="DataModel.FK__Messages__Recipi__4AB81AF0">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Messages__Sender__49C3F6B7" Association="DataModel.FK__Messages__Sender__49C3F6B7">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <EntitySet Name="Profile_Comments" EntityType="DataModel.Profile_Comments" />
+          <AssociationSet Name="FK__Profile_C__Autho__5CD6CB2B" Association="DataModel.FK__Profile_C__Autho__5CD6CB2B">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Profile_Comments" EntitySet="Profile_Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Profile_C__Recip__5DCAEF64" Association="DataModel.FK__Profile_C__Recip__5DCAEF64">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Profile_Comments" EntitySet="Profile_Comments" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Media_Files">
+          <Key>
+            <PropertyRef Name="Media_ID" />
+          </Key>
+          <Property Name="Media_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Media_Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Rel_Path" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Uploader_ID" Type="Int32" Nullable="false" />
+          <Property Name="Date_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Users" Relationship="DataModel.FK__Media_Fil__Uploa__36B12243" FromRole="Media_Files" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="Message_ID" />
+          </Key>
+          <Property Name="Message_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sender_ID" Type="Int32" Nullable="false" />
+          <Property Name="Recipient_ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Date_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Users" Relationship="DataModel.FK__Messages__Recipi__4AB81AF0" FromRole="Messages" ToRole="Users" />
+          <NavigationProperty Name="Users1" Relationship="DataModel.FK__Messages__Sender__49C3F6B7" FromRole="Messages" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK__Media_Fil__Uploa__36B12243">
+          <End Type="DataModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="DataModel.Media_Files" Role="Media_Files" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Media_Files">
+              <PropertyRef Name="Uploader_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Messages__Recipi__4AB81AF0">
+          <End Type="DataModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="DataModel.Messages" Role="Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="Recipient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Messages__Sender__49C3F6B7">
+          <End Type="DataModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="DataModel.Messages" Role="Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="Sender_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Profile_Comments">
+          <Key>
+            <PropertyRef Name="Comment_ID" />
+          </Key>
+          <Property Name="Comment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Author_ID" Type="Int32" Nullable="false" />
+          <Property Name="Recipient_ID" Type="Int32" Nullable="false" />
+          <Property Name="Comment" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Is_Reply_To" Type="Int32" />
+          <NavigationProperty Name="Users" Relationship="DataModel.FK__Profile_C__Autho__5CD6CB2B" FromRole="Profile_Comments" ToRole="Users" />
+          <NavigationProperty Name="Users1" Relationship="DataModel.FK__Profile_C__Recip__5DCAEF64" FromRole="Profile_Comments" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK__Profile_C__Autho__5CD6CB2B">
+          <End Type="DataModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="DataModel.Profile_Comments" Role="Profile_Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Profile_Comments">
+              <PropertyRef Name="Author_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Profile_C__Recip__5DCAEF64">
+          <End Type="DataModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="DataModel.Profile_Comments" Role="Profile_Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Profile_Comments">
+              <PropertyRef Name="Recipient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DataModelStoreContainer" CdmEntityContainer="DataEntities">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="DataModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+                <ScalarProperty Name="User_Email" ColumnName="User_Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Password_Salt" ColumnName="Password_Salt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Media_Files">
+            <EntityTypeMapping TypeName="DataModel.Media_Files">
+              <MappingFragment StoreEntitySet="Media_Files">
+                <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+                <ScalarProperty Name="Uploader_ID" ColumnName="Uploader_ID" />
+                <ScalarProperty Name="Rel_Path" ColumnName="Rel_Path" />
+                <ScalarProperty Name="Media_Title" ColumnName="Media_Title" />
+                <ScalarProperty Name="Media_ID" ColumnName="Media_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="DataModel.Messages">
+              <MappingFragment StoreEntitySet="Messages">
+                <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Recipient_ID" ColumnName="Recipient_ID" />
+                <ScalarProperty Name="Sender_ID" ColumnName="Sender_ID" />
+                <ScalarProperty Name="Message_ID" ColumnName="Message_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profile_Comments">
+            <EntityTypeMapping TypeName="DataModel.Profile_Comments">
+              <MappingFragment StoreEntitySet="Profile_Comments">
+                <ScalarProperty Name="Is_Reply_To" ColumnName="Is_Reply_To" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Recipient_ID" ColumnName="Recipient_ID" />
+                <ScalarProperty Name="Author_ID" ColumnName="Author_ID" />
+                <ScalarProperty Name="Comment_ID" ColumnName="Comment_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

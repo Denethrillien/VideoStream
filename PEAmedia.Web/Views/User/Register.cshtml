@@ -1,0 +1,29 @@
+﻿@model PEAmedia.Web.Models.User
+@{
+    ViewBag.Title = "Register";
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "User registration incomplete. Please check your input data.");
+    <div class="PopUp ShadowBox">
+        <fieldset class="Fieldset">
+            <legend>
+                User account registration
+            </legend>
+            <div class="RegForm">
+                @Html.TextBoxFor(u => u.userName, new { placeholder = "Username", @class = "RegBox" })
+            </div>
+            <div class="RegForm">
+                @Html.TextBoxFor(u => u.eMail, new { placeholder = "e-mail", @class = "RegBox" })
+            </div>
+            <div>
+                @Html.TextBoxFor(u => u.password, new { placeholder = "Password", @class = "RegBox" })
+            </div>
+            <div class="RegForm">
+                <a href="javascript:void(0)" class="SubmitForm">Go!</a>
+            </div>
+        </fieldset>
+    </div>
+}

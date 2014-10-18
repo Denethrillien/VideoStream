@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Messenger";
+    Layout = null;
+}
+
+<div class="PopUp ShadowBox">
+    <div id="messengerNav">
+        @Ajax.ActionLink("Inbox", "Inbox", "Messenger", new AjaxOptions { UpdateTargetId = "messengerBody" })
+        <span>|</span>
+        @Ajax.ActionLink("New", "Compose", "Messenger", new AjaxOptions { UpdateTargetId = "messengerBody" })
+        <span>|</span>
+        @Ajax.ActionLink("Sent", "Sent", "Messenger", new AjaxOptions { UpdateTargetId = "messengerBody" })
+    </div>
+    <div id="messengerBody">
+        @Html.Action("Inbox", "Messenger")
+    </div>
+    <div>
+        Additional controls.
+    </div>
+</div>

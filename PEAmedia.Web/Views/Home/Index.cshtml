@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "PEAmedia Home";
+}
+
+<div class="SLContainer">
+
+    <!-- Path and title hardcoded for testing. -->
+    @Helpers.SilverLightHostControl("/ClientBin/PEAmedia.Player.xap", "/Media/What A Day.mp3", "What A Day")
+</div>
+
+@Html.ActionLink("Profile", "UserProfile", "User", new { uID = @"1" }, null)

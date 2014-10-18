@@ -1,0 +1,30 @@
+﻿@model PEAmedia.Web.Models.User
+
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Invalid username or password");
+    <div class="PopUp ShadowBox">
+        <fieldset class="Fieldset">
+            <legend>
+                Login |
+                @Html.ActionLink("Register", "Register", "User")
+            </legend>
+            <div class="RegForm">
+                @Html.TextBoxFor(u => u.userName, new { placeholder = "Username", @class = "RegBox" })
+                @Html.ValidationMessageFor(u => u.userName)
+            </div>
+            <div class="RegForm">
+                @Html.PasswordFor(u => u.password, new { placeholder = "Password", @class = "RegBox" })
+                @Html.ValidationMessageFor(u => u.password)
+            </div>
+            <div class="RegForm">
+                <a href="javascript:void(0)" class="SubmitForm">Go!</a>
+            </div>
+        </fieldset>
+    </div>
+}

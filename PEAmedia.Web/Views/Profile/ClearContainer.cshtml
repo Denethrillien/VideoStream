@@ -1,0 +1,4 @@
+﻿@if (Request.IsAuthenticated)
+{
+    @Ajax.ActionLink("New", "Post", "Profile", new AjaxOptions { UpdateTargetId = "addEntry" })
+}

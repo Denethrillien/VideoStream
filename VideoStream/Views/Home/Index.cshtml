@@ -1,8 +1,0 @@
-﻿@{
-    ViewBag.Title = "PEAmedia Home";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-    <div class="SLContainer">
-        @Helpers.SilverLightHostControl("/ClientBin/MediaPlayer.xap")
-    </div>
-    @Html.ActionLink("Profile", "UserProfile", "Home", new { id = "1" }, null)
