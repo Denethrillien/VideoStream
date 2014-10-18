@@ -19,7 +19,7 @@ namespace VideoStream.Controllers
         }
 
         [HttpPost]
-        public ActionResult _Login(Models.UserModel user)
+        public ActionResult _Login(Models.User user)
         {
             if (ModelState.IsValid)
             {
@@ -43,7 +43,7 @@ namespace VideoStream.Controllers
         }
 
         [HttpPost]
-        public ActionResult _Register(Models.UserModel user)
+        public ActionResult _Register(Models.User user)
         {
             if (ModelState.IsValid)
             {

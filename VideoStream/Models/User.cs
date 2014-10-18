@@ -6,7 +6,7 @@ using System.Web;
 
 namespace VideoStream.Models
 {
-    public class UserModel
+    public class User
     {
         [Required]
         [EmailAddress]

@@ -7,7 +7,7 @@ using System.Web;
 
 namespace VideoStream.Models
 {
-    public class CommentModel
+    public class Comment
     {
         [Required]
         public int author { get; set; }

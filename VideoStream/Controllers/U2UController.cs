@@ -38,13 +38,13 @@ namespace VideoStream.Controllers
         [HttpGet]
         public ActionResult _Comment()
         {
-            var cm = new List<Models.CommentModel>();
+            var cm = new List<Models.Comment>();
             using (var db = new DataEntities())
             {
                 foreach (var item in db.Comments) 
                 {
-                    var c = new Models.CommentModel();
-                    c.author_name = item.Users.user_name;
+                    var c = new Models.Comment();
+                    c.author_name = db.Users.FirstOrDefault(u => u.user_id == item.author_id).user_name;
                     c.dateTime = item.date_and_time;
                     c.entry = item.entry;
                     c.isCommentFor = item.is_comment_for;
@@ -69,7 +69,7 @@ namespace VideoStream.Controllers
             }
         }
         [HttpPost]
-        public ActionResult _Compose(Models.CommentModel comment)
+        public ActionResult _Compose(Models.Comment comment)
         {
             using (var db = new DataEntities())
             {
