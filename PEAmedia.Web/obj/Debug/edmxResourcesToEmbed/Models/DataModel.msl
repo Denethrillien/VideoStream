@@ -38,6 +38,8 @@
     <EntitySetMapping Name="Profile_Comments">
       <EntityTypeMapping TypeName="DataModel.Profile_Comments">
         <MappingFragment StoreEntitySet="Profile_Comments">
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
           <ScalarProperty Name="Is_Reply_To" ColumnName="Is_Reply_To" />
           <ScalarProperty Name="Comment" ColumnName="Comment" />
           <ScalarProperty Name="Recipient_ID" ColumnName="Recipient_ID" />
