@@ -21,5 +21,19 @@ namespace PEAmedia.Web.Controllers
         {
             return PartialView();
         }
+
+        //
+        // GET: /Uploads/
+        public ActionResult Uploads()
+        {
+            return PartialView();
+        }
+
+        //
+        // GET: /Info/
+        public ActionResult Info()
+        {
+            return PartialView();
+        }
     }
 }
