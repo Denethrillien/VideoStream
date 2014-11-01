@@ -1,4 +1,4 @@
 VideoStream
 ===========
 
-Video streaming project as SPA
+Video streaming project using Razor MVC
