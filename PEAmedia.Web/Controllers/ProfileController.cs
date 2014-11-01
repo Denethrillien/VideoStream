@@ -66,11 +66,18 @@ namespace PEAmedia.Web.Controllers
             return PartialView(collectComments());
         }
 
+        //
+        // GET: /ProfileReply/
+        public ActionResult ProfileReply(string cID)
+        {
+            var commentID = Int32.Parse(cID);
+            return PartialView(collectReplies(commentID));
+        }
+
         /// <summary>
         /// Gets the appropriate comments from database
         /// </summary>
-        /// <param name="isInbox">true if Inbox, false if Sent</param>
-        /// <returns>A list of Message model objects</returns>
+        /// <returns>A list of Profile_Comment model objects</returns>
         private List<Models.Profile_Comment> collectComments()
         {
             var comments = new List<PEAmedia.Web.Models.Profile_Comment>();
@@ -79,12 +86,13 @@ namespace PEAmedia.Web.Controllers
                 var profileID = Int32.Parse(Request.QueryString["uID"]);
 
                 //Populate comment bag from DB. Newest entries first.
-                var commentBag = db.Profile_Comments.Where(m => m.Recipient_ID == profileID).OrderByDescending(m => m.Comment_ID).ToList();
+                var commentBag = db.Profile_Comments.Where(m => m.Recipient_ID == profileID && m.Is_Reply_To == null).OrderByDescending(m => m.Comment_ID).ToList();
 
                 foreach (var item in commentBag)
                 {
                     var model = new PEAmedia.Web.Models.Profile_Comment();
 
+                    model.entryID = item.Comment_ID;
                     model.Date = item.Date_Time;
                     model.Sender = db.Users.FirstOrDefault(u => u.User_ID == item.Author_ID).User_Name;
                     model.Title = item.Title;
@@ -94,6 +102,34 @@ namespace PEAmedia.Web.Controllers
                 }
             }
             return comments;
+        }
+
+        /// <summary>
+        /// Gets the appropriate replies from database
+        /// </summary>
+        /// <returns>A list of Profile_Comment model objects</returns>
+        private List<Models.Profile_Comment> collectReplies(int cID)
+        {
+            var replies = new List<PEAmedia.Web.Models.Profile_Comment>();
+            using (var db = new DataEntities())
+            {
+                //Populate comment bag from DB. Newest entries first.
+                var replyBag = db.Profile_Comments.Where(m => m.Is_Reply_To == cID).OrderByDescending(m => m.Comment_ID).ToList();
+
+                foreach (var item in replyBag)
+                {
+                    var model = new PEAmedia.Web.Models.Profile_Comment();
+
+                    model.entryID = item.Comment_ID;
+                    model.Date = item.Date_Time;
+                    model.Sender = db.Users.FirstOrDefault(u => u.User_ID == item.Author_ID).User_Name;
+                    model.Title = item.Title;
+                    model.Entry = item.Comment;
+
+                    replies.Add(model);
+                }
+            }
+            return replies;
         }
 
         //

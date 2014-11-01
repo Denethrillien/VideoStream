@@ -7,6 +7,7 @@ namespace PEAmedia.Web.Models
 {
     public class Profile_Comment
     {
+        public int entryID { get; set; }
         public string Sender { get; set; }
         public int Recipient { get; set; }
         public string Title { get; set; }
