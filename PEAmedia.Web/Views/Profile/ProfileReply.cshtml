@@ -11,7 +11,7 @@
         @item.Entry
     </div>
     <div id="commentControls">
-        Reply | Bookmark
+        @Ajax.ActionLink("Reply", "Reply", "Profile", new { cID = item.entryID }, new AjaxOptions { UpdateTargetId = "commentControls" })
     </div>
     <div id="reply">
         @Html.Action("ProfileReply", "Profile", new { cID = item.entryID })

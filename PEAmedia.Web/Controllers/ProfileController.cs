@@ -53,6 +53,46 @@ namespace PEAmedia.Web.Controllers
         }
 
         //
+        // GET: /Reply/
+        [HttpGet]
+        public ActionResult Reply()
+        {
+            return PartialView();
+        }
+
+        //
+        // POST: /Reply/
+        [HttpPost]
+        public ActionResult Reply(Models.Profile_Comment model, string cID)
+        {
+            int commentID = Int32.Parse(cID);
+            model.Date = System.DateTime.Now;
+            model.Sender = User.Identity.Name;
+            //TODO: Softcode
+            model.Recipient = 1;
+            if (ModelState.IsValid)
+            {
+                using (var db = new PEAmedia.Web.Models.DataEntities())
+                {
+                    var newPost = db.Profile_Comments.Create();
+
+                    newPost.Author_ID = db.Users.FirstOrDefault(u => u.User_Name == model.Sender).User_ID;
+                    newPost.Recipient_ID = model.Recipient;
+                    newPost.Date_Time = model.Date;
+                    newPost.Comment = model.Entry;
+                    newPost.Title = model.Title;
+                    newPost.Is_Reply_To = commentID;
+
+                    db.Profile_Comments.Add(newPost);
+                    db.SaveChanges();
+
+                    return RedirectToAction("UserProfile", "User", new { uID = model.Recipient });
+                }
+            }
+            return PartialView();
+        }
+
+        //
         // GET: /Clear container/
         public ActionResult ClearContainer()
         {
