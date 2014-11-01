@@ -112,6 +112,8 @@
     <Property Name="Is_Reply_To" Type="Int32" />
     <NavigationProperty Name="Users" Relationship="DataModel.FK__Profile_C__Autho__5CD6CB2B" FromRole="Profile_Comments" ToRole="Users" />
     <NavigationProperty Name="Users1" Relationship="DataModel.FK__Profile_C__Recip__5DCAEF64" FromRole="Profile_Comments" ToRole="Users" />
+    <Property Name="Date_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK__Profile_C__Autho__5CD6CB2B">
     <End Type="DataModel.Users" Role="Users" Multiplicity="1" />

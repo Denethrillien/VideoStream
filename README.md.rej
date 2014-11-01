@@ -1,0 +1,7 @@
+diff a/README.md b/README.md	(rejected hunks)
+@@ -1,4 +1,4 @@
+ VideoStream
+ ===========
+ 
+-Video streaming project as SPA
++Video streaming project using Razor MVC

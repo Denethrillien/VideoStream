@@ -1,0 +1,19 @@
+﻿@model IEnumerable<PEAmedia.Web.Models.Profile_Comment>
+@foreach (var item in Model)
+{
+    <div id="commentHead">
+        @item.Sender wrote on @item.Date.ToLocalTime()
+    </div>
+    <div id="commentTitle">
+        @item.Title
+    </div>
+    <div id="commentBody">
+        @item.Entry
+    </div>
+    <div id="commentControls">
+        @Ajax.ActionLink("Reply", "Reply", "Profile", new { cID = item.entryID }, new AjaxOptions { UpdateTargetId = "commentControls" })
+    </div>
+    <div id="reply">
+        @Html.Action("ProfileReply", "Profile", new { cID = item.entryID })
+    </div>
+}
