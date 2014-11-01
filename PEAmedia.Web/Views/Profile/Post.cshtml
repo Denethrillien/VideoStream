@@ -2,7 +2,8 @@
 @using (Html.BeginForm())
 {
         <div id="compose">
-            @Html.TextAreaFor(u => u.Entry, new { placeholder = "Write your message here...", @class = "CommentBox" })
+            @Html.TextBoxFor(u => u.Title, new { placeholder = "Title", @class = "CommentBox" })
+            @Html.TextAreaFor(u => u.Entry, new { placeholder = "Write your message here...", @class = "CommentArea" })
         </div>
         <a href="javascript:void(0)" class="SubmitForm">Send</a>
         <span>

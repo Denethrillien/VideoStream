@@ -30,6 +30,8 @@
     <Property Name="Recipient_ID" Type="int" Nullable="false" />
     <Property Name="Comment" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Is_Reply_To" Type="int" />
+    <Property Name="Date_Time" Type="datetime" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>

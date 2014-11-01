@@ -183,6 +183,10 @@
     <Content Include="Views\Messenger\Sent.cshtml" />
     <Content Include="Views\Profile\Post.cshtml" />
     <Content Include="Views\Profile\ClearContainer.cshtml" />
+    <Content Include="Views\Profile\Uploads.cshtml" />
+    <Content Include="Views\Profile\Info.cshtml" />
+    <Content Include="Views\Profile\ProfileComment.cshtml" />
+    <Content Include="Views\Profile\ProfileReply.cshtml" />
     <Resource Include="ClientBin\Graphics\PlayerLogo.png" />
     <Content Include="ClientBin\Media\What A Day.mp3" />
     <Content Include="ClientBin\PEAmedia.Player.xap" />

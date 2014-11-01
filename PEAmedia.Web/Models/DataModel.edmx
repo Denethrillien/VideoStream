@@ -35,6 +35,8 @@
           <Property Name="Recipient_ID" Type="int" Nullable="false" />
           <Property Name="Comment" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Is_Reply_To" Type="int" />
+          <Property Name="Date_Time" Type="datetime" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -248,6 +250,8 @@
           <Property Name="Is_Reply_To" Type="Int32" />
           <NavigationProperty Name="Users" Relationship="DataModel.FK__Profile_C__Autho__5CD6CB2B" FromRole="Profile_Comments" ToRole="Users" />
           <NavigationProperty Name="Users1" Relationship="DataModel.FK__Profile_C__Recip__5DCAEF64" FromRole="Profile_Comments" ToRole="Users" />
+          <Property Name="Date_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK__Profile_C__Autho__5CD6CB2B">
           <End Type="DataModel.Users" Role="Users" Multiplicity="1" />
@@ -316,6 +320,8 @@
           <EntitySetMapping Name="Profile_Comments">
             <EntityTypeMapping TypeName="DataModel.Profile_Comments">
               <MappingFragment StoreEntitySet="Profile_Comments">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
                 <ScalarProperty Name="Is_Reply_To" ColumnName="Is_Reply_To" />
                 <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="Recipient_ID" ColumnName="Recipient_ID" />

@@ -19,6 +19,8 @@ namespace PEAmedia.Web.Models
         public int Recipient_ID { get; set; }
         public string Comment { get; set; }
         public Nullable<int> Is_Reply_To { get; set; }
+        public System.DateTime Date_Time { get; set; }
+        public string Title { get; set; }
     
         public virtual Users Users { get; set; }
         public virtual Users Users1 { get; set; }
